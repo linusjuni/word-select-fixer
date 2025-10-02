@@ -1,4 +1,4 @@
-const SELECTION_DELAY = 10;
+const SELECTION_DELAY = 50;
 const EXTENSION_NAME = 'Word Select Fixer';
 
 let isEnabled = true;
