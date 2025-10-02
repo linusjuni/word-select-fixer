@@ -1,12 +1,13 @@
-const SELECTION_DELAY = 50;
+const SELECTION_DELAY = 10;
 const EXTENSION_NAME = 'Word Select Fixer';
 
-let isEnabled = true;
+let isEnabled = true; 
 
 interface SelectionResult {
   success: boolean;
   error?: Error;
 }
+
 
 class Logger {
   private static prefix = `[${EXTENSION_NAME}]`;
@@ -19,7 +20,8 @@ class Logger {
     console.warn(`${this.prefix} ${message}`);
   }
 
-  static info(_message: string): void {
+  static info(message: string): void {
+    console.info(`${this.prefix} ${message}`);
   }
 }
 
@@ -115,6 +117,11 @@ function handleDoubleClick(_event: MouseEvent): void {
 function loadEnabledState(): void {
   chrome.storage.local.get(['enabled'], (result) => {
     isEnabled = result.enabled !== false;
+    
+    if (result.enabled === undefined) {
+      chrome.storage.local.set({ enabled: true });
+    }
+    
     Logger.info(`Extension ${isEnabled ? 'enabled' : 'disabled'}`);
   });
 }
@@ -131,7 +138,9 @@ function setupMessageListener(): void {
 function init(): void {
   try {
     loadEnabledState();
+
     setupMessageListener();
+
     document.addEventListener('dblclick', handleDoubleClick, true);
     Logger.info('Extension initialized successfully');
   } catch (error) {

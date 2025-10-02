@@ -3,6 +3,11 @@ const label = document.getElementById('toggleLabel');
 
 chrome.storage.local.get(['enabled'], function(result) {
   const isEnabled = result.enabled !== false;
+  
+  if (result.enabled === undefined) {
+    chrome.storage.local.set({ enabled: true });
+  }
+  
   toggle.checked = isEnabled;
   updateLabel(isEnabled);
 });
@@ -15,11 +20,14 @@ toggle.addEventListener('change', function() {
     
     chrome.tabs.query({}, function(tabs) {
       tabs.forEach(tab => {
-        chrome.tabs.sendMessage(tab.id, { 
-          action: 'toggleExtension', 
-          enabled: isEnabled 
-        }).catch(() => {
-        });
+        if (tab.id) {
+          chrome.tabs.sendMessage(tab.id, { 
+            action: 'toggleExtension', 
+            enabled: isEnabled 
+          }).catch(() => {
+            // Ignore errors for tabs that don't have content script
+          });
+        }
       });
     });
   });
