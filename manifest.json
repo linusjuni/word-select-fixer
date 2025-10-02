@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Automatically removes trailing spaces when double-clicking to select words in Chrome. Makes text selection cleaner and more precise.",
   "author": "Your Name",
-  "homepage_url": "https://github.com/yourusername/word-select-fixer",
-  "permissions": [],
+  "homepage_url": "https://github.com/linusjuni/word-select-fixer",
+  "permissions": ["storage"],
   "host_permissions": [],
   "action": {
     "default_popup": "popup.html",

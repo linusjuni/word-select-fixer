@@ -1,0 +1,22 @@
+{
+  "name": "word-select-fixer",
+  "version": "1.0.0",
+  "description": "Chrome extension that removes trailing spaces from word selections",
+  "scripts": {
+    "build": "tsc && npm run copy-files",
+    "copy-files": "cp manifest.json dist/ && cp popup.html dist/ && cp popup.css dist/ && cp popup.js dist/ && cp -r icons dist/",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.5.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "text-selection",
+    "productivity"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -16,7 +16,8 @@ This extension automatically removes trailing spaces from your selection immedia
 - Works on all websites
 - Zero performance impact
 - No configuration needed
-- Lightweight
+- Lightweight (less than 1KB)
+- Written in TypeScript with professional error handling
 
 ## Installation
 
@@ -26,12 +27,20 @@ Coming soon.
 
 ### Manual Installation (Development)
 
-1. Download or clone this repository
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top-right corner
-4. Click "Load unpacked"
-5. Select the folder containing the extension files
-6. The extension is now active
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Build the extension:
+   ```bash
+   npm run build
+   ```
+4. Open Chrome and navigate to `chrome://extensions/`
+5. Enable "Developer mode" in the top-right corner
+6. Click "Load unpacked"
+7. Select the `dist` folder
+8. The extension is now active
 
 ## Usage
 
@@ -39,21 +48,28 @@ Simply double-click any word on any webpage. The word will be selected without t
 
 No configuration or additional steps required.
 
+## Development
+
+### Build Scripts
+
+- `npm run build` - Compile TypeScript and copy files to dist/
+- `npm run watch` - Watch for changes and recompile
+- `npm run clean` - Remove dist folder
+
+### Local Development
+
+1. Make changes to TypeScript files in `src/`
+2. Run `npm run build` to compile
+3. Go to `chrome://extensions/`
+4. Click the refresh icon on the extension card
+5. Test on any webpage
+
 ## Browser Compatibility
 
 - Chrome (Manifest V3)
 - Edge (Chromium-based)
 - Brave
 - Other Chromium-based browsers
-
-## Development
-
-### Local Development
-
-1. Make changes to the code
-2. Go to `chrome://extensions/`
-3. Click the refresh icon on the extension card
-4. Test on any webpage
 
 ## Privacy
 
