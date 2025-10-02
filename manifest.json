@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Word Select Fixer",
+  "version": "1.0",
+  "description": "Removes trailing spaces when double-clicking to select words",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
