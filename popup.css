@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 340px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1f2937;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+    padding: 0;
+    background: #ffffff;
+}
+
+.header {
+    padding: 28px 24px 24px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.status span {
+    font-size: 14px;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.info {
+    padding: 24px;
+}
+
+.info h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.info p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.tip {
+    margin: 0 24px 24px 24px;
+    padding: 16px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 12px;
+    border: 1px solid #fbbf24;
+    font-size: 13px;
+    color: #92400e;
+    line-height: 1.6;
+}
+
+.tip strong {
+    color: #78350f;
+    font-weight: 700;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+.link {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.link:hover {
+    color: #764ba2;
+}
+
+.version {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 500;
+}
